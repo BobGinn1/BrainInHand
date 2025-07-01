@@ -1,6 +1,6 @@
 import { Planet } from "@/models/Planet";
-
-const BASE_URL = "https://swapi-node.now.sh/api/planets/";
+import { environment } from "@/environments/environment";
+const BASE_URL = `${environment.apiUrl}/planets/`;
 
 export async function getPlanet(id: string): Promise<Planet> {
   const response = await fetch(`${BASE_URL}${id}`);

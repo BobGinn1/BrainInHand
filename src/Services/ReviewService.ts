@@ -1,6 +1,6 @@
 import { Review } from "@/models/Review";
-
-const BASE_URL = "https://swapi-node.vercel.app/api/Review/";
+import { environment } from "@/environments/environment";
+const BASE_URL = `${environment.apiUrl}/review/`;
 
 export async function submitReview(review: Review): Promise<any> {
   try {
