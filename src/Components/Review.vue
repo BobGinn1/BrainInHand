@@ -3,14 +3,11 @@ import type { Review } from '@/models/Review';
 import { reactive, computed, ref } from 'vue';
 import { defineEmits, defineProps } from 'vue';
 
-// Service wrapper class
 class ReviewServiceWrapper {
   constructor() {
-    // Add any initialization if needed here
   }
 
   async submitReview(review: Review): Promise<any> {
-    // Import the actual service function inside the class method
     const { submitReview } = await import('@/services/ReviewService');
     return await submitReview(review);
   }
